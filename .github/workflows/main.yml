@@ -12,10 +12,10 @@ jobs:
       - name: Extract Certificates and Provisioning Profile
         run: |
           mkdir ~/certs ~/profiles
-          echo $CERTIFICATE > ~/certs/apple-developer.cer
+          echo $APPLE_DEVELOPER_CERTIFICATE > ~/certs/apple-developer.cer
           echo $PROVISIONING_PROFILE > ~/profiles/profile.mobileprovision
         env:
-          CERTIFICATE: ${{ secrets.CERTIFICATE }}
+          CERTIFICATE: ${{ secrets.APPLE_DEVELOPER_CERTIFICATE }}
           PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
       - name: Pod install
         working-directory: ios
