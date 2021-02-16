@@ -1,0 +1,6 @@
+lane :beta do
+    import_certificate(certificate_path: "~/certs/apple-developer.cer")
+    install_provisioning_profile(path: "~/profiles/profile.mobileprovision")
+    build_app
+    deploygate
+end
