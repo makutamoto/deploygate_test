@@ -19,7 +19,7 @@ platform :ios do
   desc "ios beta build"
   lane :beta do
     create_keychain(name: "apple-developer", password: '', default_keychain: true)
-    import_certificate(keychain_name: "apple-developer", certificate_path: File.expand_path("~/certs/apple-developer.cer"))
+    import_certificate(certificate_path: File.expand_path("~/certs/apple-developer.cer"), log_output: true)
     install_provisioning_profile(path: File.expand_path("~/profiles/profile.mobileprovision"))
     build_app
     deploygate
