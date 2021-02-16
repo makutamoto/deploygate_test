@@ -18,7 +18,7 @@ default_platform(:ios)
 platform :ios do
   desc "ios beta build"
   lane :beta do
-    import_certificate(certificate_path: "~/certs/apple-developer.cer")
+    import_certificate(keychain_name: "apple-developer", certificate_path: "~/certs/apple-developer.cer")
     install_provisioning_profile(path: "~/profiles/profile.mobileprovision")
     build_app
     deploygate
