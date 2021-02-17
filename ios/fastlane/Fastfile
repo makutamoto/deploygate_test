@@ -21,7 +21,7 @@ platform :ios do
     create_keychain(name: "apple-developer", password: "password")
     import_certificate(keychain_name: "apple-developer", keychain_password: "password", certificate_path: File.expand_path("~/certs/apple-developer.p12"), certificate_password: ENV["APPLE_DEVELOPER_CERTIFICATE_PASSWORD"])
     install_provisioning_profile(path: File.expand_path("~/profiles/profile.mobileprovision"))
-    build_app(workspace: "deploygate_test.xcworkspace", scheme: "deploygate_test")
+    build_app(workspace: "deploygate_test.xcworkspace", scheme: "deploygate_test", skip_codesigning: true)
     deploygate
   end
 end
