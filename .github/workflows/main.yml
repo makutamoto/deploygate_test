@@ -18,7 +18,7 @@ jobs:
       - name: Extract Certificates and Provisioning Profile
         run: |
           mkdir ~/certs ~/profiles
-          echo $APPLE_DEVELOPER_CERTIFICATE | base64 -d > ~/certs/apple-developer.cer
+          echo $APPLE_DEVELOPER_CERTIFICATE | base64 -d > ~/certs/apple-developer.p12
           echo $PROVISIONING_PROFILE | base64 -d > ~/profiles/profile.mobileprovision
         env:
           CERTIFICATE: ${{ secrets.APPLE_DEVELOPER_CERTIFICATE }}
