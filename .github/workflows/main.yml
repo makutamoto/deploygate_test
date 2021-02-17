@@ -26,6 +26,15 @@ jobs:
       - name: Pod install
         working-directory: ios
         run: pod install
+
+
+
+      - uses: actions/upload-artifact@v2
+          with:
+            name: my-artifact
+            path: Podfile.lock
+
+
       - name: Build app
         working-directory: ios
         run: fastlane beta
